@@ -1,0 +1,11 @@
+{
+  "id": "nodebb-plugin-custom-registration",
+  "name": "Custom Registration Fields",
+  "description": "Allows adding custom fields to the registration form",
+  "version": "1.0.0",
+  "library": "./plugin.js",
+  "hooks": [
+    { "hook": "filter:register.build", "method": "addFields" },
+    { "hook": "action:register.complete", "method": "saveFields" }
+  ]
+}
