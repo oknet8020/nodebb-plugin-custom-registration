@@ -1,11 +1,9 @@
 {
-  "id": "nodebb-plugin-custom-registration",
-  "name": "Custom-Registration-Fields",
-  "description": "Allows adding custom fields to the registration form",
+  "name": "nodebb-plugin-custom-registration",
   "version": "1.0.0",
-  "library": "./plugin.js",
-  "hooks": [
-    { "hook": "filter:register.build", "method": "addFields" },
-    { "hook": "action:register.complete", "method": "saveFields" }
-  ]
+  "description": "Custom fields for NodeBB registration",
+  "main": "plugin.js",
+  "nbbpm": {
+    "compatibility": "^3.0.0 || ^4.0.0"
+  }
 }
