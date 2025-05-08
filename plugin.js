@@ -1,20 +1,21 @@
 'use strict';
 
-var plugin = {};
+const plugin = {};
 
-plugin.addFields = function(data, callback) {
-    data.registrationForm.push({
-        label: 'מספר טלפון',
-        name: 'phone',
-        placeholder: 'הזן מספר טלפון',
-        type: 'text'
-    });
-
-    callback(null, data);
+plugin.init = function (params, callback) {
+  console.log('[custom-registration] תוסף הופעל');
+  callback();
 };
 
-plugin.saveFields = function(data) {
-    console.log("שדה מותאם אישית נשמר:", data.userData.phone);
+plugin.addFields = function (data, callback) {
+  data.registrationForm = data.registrationForm || [];
+  data.registrationForm.push({
+    name: 'phone',
+    label: 'מספר טלפון',
+    type: 'text',
+    placeholder: 'הכנס מספר טלפון'
+  });
+  callback(null, data);
 };
 
 module.exports = plugin;
